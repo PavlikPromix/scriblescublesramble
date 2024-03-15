@@ -1,6 +1,8 @@
-
+import './fonts.css'
 function Navigationbar ({}){
-    return   (<h1 style={{color:'white', fontSize:'16pt'}}> </h1>
+    return   (<div style={{height:'80px',backgroundColor: 'DarkKhaki', width: "100svw", position: 'fixed', top:'0',display: 'flex', alignItems:'center', justifyContent:'center' }}>
+        <p className='fontstyle'>ScribleScublesRamble</p></div>
+
     );
 }
 export default Navigationbar;
