@@ -1,5 +1,6 @@
 import Mainbar from "./components/Bars/Mainbar";
 import Subbar from "./components/Bars/Subbar";
+import Buttonchik from "./components/Buttonchik/Buttonchik";
 import "./page.css"
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
 			<div className="maincontainer">
 				<Mainbar />
 				<Subbar />
+				<Buttonchik>ИГРАТЬ</Buttonchik>
 			</div>
 			<div>
 				<img className="img1" src=""></img>
