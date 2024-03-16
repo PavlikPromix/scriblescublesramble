@@ -1,4 +1,4 @@
-import Buttonchik from "./Buttonchik/Buttonchik";
+import Buttonchik from "./Buttonchik/Buttonchik.js";
 
 function router (){
     const router = userouter();

@@ -2,7 +2,7 @@ import "./Navigationbar.css";
 function Navigationbar({}) {
 	return (
 		<div className="container">
-			<p className="navtext boldtext">ScribleScubleSramble ЧУДНОЙ?</p>
+			<p className="navtext boldtext">ScribleScubleSramble</p>
 		</div>
 	);
 }
