@@ -1,5 +1,5 @@
 import Navigationbar from "./components/Navigationbar/Navigationbar.js";
-import './globals.css'
+import "./globals.css";
 
 export const metadata = {
 	title: "ScribleScubleSramble",
@@ -9,13 +9,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="ru">
-      <head>
-        <title>{metadata.title}</title>
-      </head>
+			<head>
+				<title>{metadata.title}</title>
+			</head>
 			<body>
-			<Navigationbar/>
-        {children}
-      </body>
+				<Navigationbar />
+				{children}
+			</body>
 		</html>
 	);
 }
