@@ -12,4 +12,5 @@
 	align-items: center;
 	justify-content: center;
     border-bottom: 1px solid color-mix(in srgb, var(--secondary) 50%, #ffffff00); 
+	z-index: 99;
 }
