@@ -1,15 +1,9 @@
-.sbartext {
-	font-size: 1em;
-	color: var(--primary); /* Использую глобальные цвета */
-	font-weight: 800;
-    letter-spacing: 0.05em; /* Расстояние между буквами */
-	text-shadow: rgba(0, 0, 0, 0.432) 1px 1px 1px;
-}
-
 .sbarcontainer {
 	height: auto;
 	width: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 1.5em;
+	padding: 0.5em;
 }
