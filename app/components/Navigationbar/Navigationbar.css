@@ -3,18 +3,17 @@
 	color: var(--primary); /* Использую глобальные цвета */
 	font-weight: 800;
     letter-spacing: 0.05em; /* Расстояние между буквами */
-	/* text-shadow: rgba(0, 0, 0, 0.432) 1px 1px 1px; Я короче не знаю, нужна ли эта теньб? Смотри сам. Мне кажется, без неё збс */
+	text-shadow: rgba(0, 0, 0, 0.432) 1px 1px 1px; 
 }
 
 .container {
 	height: 80px;
 	background-color: var(--bg);
 	width: 100svw;
-	position: fixed;
 	top: 0;
-    left: 0;
+	position: fixed;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    border-bottom: 1px solid color-mix(in srgb, var(--secondary) 50%, #ffffff00); /*Это забей хуй, я сделал полупрозрачный бордер*/
+    border-bottom: 1px solid color-mix(in srgb, var(--secondary) 50%, #ffffff00); 
 }

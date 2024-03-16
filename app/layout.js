@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
       </head>
 			<body>
-        <Navigationbar />
+			<Navigationbar/>
         {children}
       </body>
 		</html>
