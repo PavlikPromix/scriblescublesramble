@@ -1,8 +1,21 @@
 .maincontainer {
-    width: 100svw;
-    height: 100svh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+	width: 100svw;
+	height: 100svh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.img1 {
+	position: absolute;
+	left: 0;
+    top: 80px;
+	height: calc(100svh - 80px);
+}
+.img2 {
+	position: absolute;
+	right: 0;
+    top: 80px;
+	height: calc(100svh - 80px);
 }
