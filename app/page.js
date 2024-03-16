@@ -1,4 +1,4 @@
-import Navigationbar from "./components/Navigationbar.js";
+import "./components/fonts.css";
 
 export default function Home() {
   return (

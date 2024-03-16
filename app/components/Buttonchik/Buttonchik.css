@@ -1,6 +1,6 @@
 .button {
-    background-color: #BEB76B;
-    color: white;
+    background-color: var(--primary);
+    color: var(--bg);
     padding: 15px 50px;
     border: none;
     outline: none;
@@ -14,5 +14,5 @@
 }
 
 .button:hover {
-    filter: brightness(110%);
+    background-color: var(--primarylight);
 }
