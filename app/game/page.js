@@ -1,8 +1,9 @@
 import Image from "next/image";
-import gamemodebarru from "./components/Bars/gamemodebarru";
-import gamemodebarus from "./components/Bars/gamemodebarus";
 import "./page.css"
 export default function Home() {
+import "../page.css"
+
+export default function GamePage() {
 	return (
 		<>
 			<div className="maincontainer">
