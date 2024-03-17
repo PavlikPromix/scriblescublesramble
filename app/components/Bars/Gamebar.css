@@ -1,0 +1,6 @@
+.gamebar {
+    display: block;
+    width: 405px;
+    height:405px;
+    border: 1px solid black;
+}
