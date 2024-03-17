@@ -2,7 +2,7 @@ import Navigationbar from "./components/Navigationbar/Navigationbar.js";
 import "./globals.css";
 
 export const metadata = {
-	title: "ScribleScubleSramble",
+	title: "Словобойня",
 	description: "Wrote by Nikitosik and Pavlik",
 };
 

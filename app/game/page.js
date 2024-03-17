@@ -1,12 +1,12 @@
-import "./game.scss";
+import styles from "./game.module.scss";
 import Buttonchik from "../components/Buttonchik/Buttonchik";
 
 export default function GamePage() {
 	return (
 		<>
-			<div className="gamecontainer">
-				<div className="rusland subcontainer">
-					<div className="trans">
+			<div className={styles.gamecontainer}>
+				<div className={`${styles.rusland} ${styles.subcontainer}`}>
+					<div className={styles.trans}>
 						<Buttonchik redirect={"randomru"}>
 							ПРОБРОСИТЬ СВОЁ СЛОВЦО
 						</Buttonchik>
@@ -15,8 +15,8 @@ export default function GamePage() {
 						</Buttonchik>
 					</div>
 				</div>
-				<div className="usland subcontainer">
-					<div className="trans">
+				<div className={`${styles.usland} ${styles.subcontainer}`}>
+					<div className={styles.trans}>
 						<Buttonchik redirect={"randomus"}>
 							СВОЁ СЛОВО
 						</Buttonchik>

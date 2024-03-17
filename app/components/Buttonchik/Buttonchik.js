@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import './Buttonchik.css'
+import styles from './Buttonchik.module.scss'
 import { useRouter } from 'next/navigation';
 
 
@@ -8,7 +8,7 @@ export default function Buttonchik({children, onClick, redirect}) {
     const router = useRouter()
     return (
         redirect ? 
-        <button className='button' onClick={() => router.push(redirect)}>{children}</button> :
-        <button className='button' onClick={onClick}>{children}</button>
+        <button className={styles.button} onClick={() => router.push(redirect)}>{children}</button> :
+        <button className={styles.button} onClick={onClick}>{children}</button>
     )
 }
