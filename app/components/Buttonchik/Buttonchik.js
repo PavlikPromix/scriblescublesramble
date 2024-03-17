@@ -1,8 +1,8 @@
 import React, { Children } from 'react'
 import './Buttonchik.css'
 
-export default function Buttonchik({children}) {
+export default function Buttonchik({children, onClick}) {
     return (
-        <div className='button'>{children}</div>
+        <button className='button' onClick={onClick}>{children}</button>
     )
 }
