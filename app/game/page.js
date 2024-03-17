@@ -1,6 +1,7 @@
 import Image from "next/image";
-import "./page.css"
-export default function Home() {
+import "../page.css"
+
+export default function GamePage() {
 	return (
 		<>
 			<div className="maincontainer">

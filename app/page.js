@@ -10,7 +10,7 @@ export default function Home() {
 			<div className="maincontainer">
 				<Mainbar />
 				<Subbar />
-				<Buttonchik onClick={None}>ИГРАТЬ</Buttonchik>
+				<Buttonchik redirect={'game'}>ИГРАТЬ</Buttonchik>
 			</div>
 			<div>
 				<Image className="img1" width={80} height={100} src="/rusi.svg" alt="" />
