@@ -18,9 +18,8 @@
     background-image: url("../../public/rusi.jpg");
     background-size: cover;
     background-position: center top 10%;
-    backdrop-filter: brightness(0.5) blur(10px);
     &:hover {
-        width: 70svw;
+        width: 80svw;
         & > .trans {
             opacity: 1;
             backdrop-filter: brightness(0.4) blur(2px);
@@ -32,9 +31,8 @@
     background-image: url("../../public/pendosi.jpg");
     background-size: auto 150%;
     background-position: center top 10%;
-    backdrop-filter: brightness(0.5) blur(10px);
     &:hover {
-        width: 70svw;
+        width: 80svw;
         & > .trans {
             opacity: 1;
             backdrop-filter: brightness(0.4) blur(2px);

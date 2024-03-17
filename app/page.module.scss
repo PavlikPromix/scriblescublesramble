@@ -8,6 +8,23 @@
 	gap: 1em;
 }
 
+.mbarcontainer {
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 5svw;
+}
+
+.sbarcontainer {
+	height: auto;
+	width: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2svw;
+}
+
 .img1 {
 	position: absolute;
 	left: 0;

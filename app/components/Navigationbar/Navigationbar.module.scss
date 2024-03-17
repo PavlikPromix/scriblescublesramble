@@ -1,6 +1,9 @@
 .navtext {
-	font-size: 3em;
+	font-size: 4em;
 	cursor: pointer;
+	color: var(--primary); /* Использую глобальные цвета */
+	font-weight: 800;
+    letter-spacing: 0.1em; /* Расстояние между буквами */
 }
 
 .container {
