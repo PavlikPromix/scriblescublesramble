@@ -1,5 +1,4 @@
-import Image from "next/image";
-import "./game.css";
+import "./game.scss";
 import Buttonchik from "../components/Buttonchik/Buttonchik";
 
 export default function GamePage() {
