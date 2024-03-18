@@ -1,9 +1,9 @@
-import './Letter.css'
-function Letter({}) {
+import styles from './Letter.module.scss'
+function Letter({children}) {
 	return (
-		<div className="letter">
-            
-        </div>
+		<button className={styles.letter}>
+            {children}
+        </button>
 	);
 }
 export default Letter;

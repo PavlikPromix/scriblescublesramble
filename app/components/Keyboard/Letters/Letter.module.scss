@@ -1,0 +1,14 @@
+.letter {
+    min-width: 60px;
+    max-width: 150px;
+    height: 60px;
+    border: 1px solid black;
+    font-size: 23pt;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        backdrop-filter: brightness(0.7);
+    }
+}

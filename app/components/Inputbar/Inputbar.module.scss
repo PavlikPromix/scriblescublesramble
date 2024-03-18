@@ -1,0 +1,21 @@
+.letter {
+    font-size: 3em;
+    width: 1em;
+    border: none;
+    border-bottom: 1px solid black;
+    background: none;
+    outline: none;
+    text-align: center;
+    &::selection {
+        background: none;
+    }
+    &:focus {
+        border-width: 3px;
+    }
+}
+
+.letterContainer{
+    display: flex;
+    align-items: center;
+    gap:1em;
+}

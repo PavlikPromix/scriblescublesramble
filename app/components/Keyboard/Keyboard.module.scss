@@ -13,12 +13,22 @@
     gap: 0.2em;
     width: 100%;
 }
-.row1 {
+.row1ru {
     grid-template-columns: repeat(12, 1fr);
 }
-.row2 {
+.row2ru {
     grid-template-columns: repeat(11, 1fr);
 }
-.row3 {
+.row3ru {
     grid-template-columns: 1.5fr repeat(9, 1fr) 1.5fr;
+}
+
+.row1 {
+    grid-template-columns: repeat(10, 1fr);
+}
+.row2 {
+    grid-template-columns: repeat(9, 1fr);
+}
+.row3 {
+    grid-template-columns: 1.5fr repeat(7, 1fr) 1.5fr;
 }

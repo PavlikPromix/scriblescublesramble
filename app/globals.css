@@ -19,7 +19,7 @@ html, body {
     background-color: var(--bg);
 
     /* Вот этот шрифт глобальный (применён везде!). Если хочешь поменять шрифт, меняй тока тут */
-    font-family: TDRukopis, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .boldtext {
@@ -35,4 +35,14 @@ html, body {
 p {
 	margin-block-start: 0em;
     margin-block-end: 0em;
+}
+
+.maincontainer {
+    width: 100svw;
+	height: 100svh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 1em;
 }
