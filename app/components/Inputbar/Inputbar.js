@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Inputbar.module.scss";
 
-function Inputbar({ length = 5 }) {
+function Inputbar({ length = 5, language = "ru" }) {
 	const [inputValues, setInputValues] = useState(Array(length).fill(""));
 	const inputRefs = useRef([]);
 
@@ -11,9 +11,24 @@ function Inputbar({ length = 5 }) {
 		inputRefs.current = inputRefs.current.slice(0, length);
 	}, [length]);
 
+	const isValidCharacter = (char) => {
+		if (language === "ru") {
+			return /^[а-яА-ЯёЁ]*$/.test(char);
+		} else {
+			return /^[a-zA-Z]*$/.test(char);
+		}
+	};
+
 	const handleInput = (index) => {
 		return (e) => {
-			const uppercaseValue = e.target.value.toUpperCase();
+			const value = e.target.value;
+			const lastChar = value[value.length - 1] || "";
+			if (!isValidCharacter(lastChar)) {
+				e.target.value = inputValues[index];
+				return;
+			}
+
+			const uppercaseValue = value.toUpperCase();
 			const newValues = [...inputValues];
 			newValues[index] = uppercaseValue;
 			setInputValues(newValues);
