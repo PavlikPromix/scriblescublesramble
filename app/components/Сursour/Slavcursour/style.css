@@ -1,9 +1,27 @@
-.cursor-trail{
-  position: fixed;
-  pointer-events: none;
-  height: 5px;
-  width: 100px;
-  background:linear-gradient(to right, white, blue, red);
-  transition: transform 0.1s ease-out;
+.cursor-trail {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none; 
+  width: 20px;
+  height: 20px; 
   z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: trailAnimation 0.75s forwards; 
+}
+
+@keyframes trailAnimation {
+  0%, 16.66% {
+    opacity: 1;
+    transform: scale(1);
+    background-color: white;
+  }
+  33.33%, 49.99% {
+    background-color: blue;
+  }
+  50%, 66.66% {
+    background-color: red;
+  }
+  66.67%, 100% {
+    opacity: 0;
+  }
 }

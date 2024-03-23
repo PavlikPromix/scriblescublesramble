@@ -3,29 +3,37 @@ import React, { useState, useEffect } from "react";
 import './style.css'
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({x: 0, y:0});
-  const [prevPosition, setPrevPosition]=useState({x: 0, y:0})
-  
-  useEffect(()=> {
-    const updatePosition = (e) => {
-      setPrevPosition(position);
-      setPosition ({ x: e.clientX , y: e.clientY});
+  const [trails, setTrails] = useState([]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const newTrail = { x: e.pageX, y: e.pageY, key: Math.random() };
+      setTrails((currentTrails) => [...currentTrails, newTrail]);
+      
+      
+      setTimeout(() => {
+        setTrails((currentTrails) => currentTrails.filter(trail => trail.key !== newTrail.key));
+      }, 500); 
     };
-    window.addEventListener('mousemove',updatePosition);
-    return () => window.removeEventListener('mousemove', updatePosition);
-  },[position]);
-  const direction ={
-      isMovingLeft: position.x < prev.Position.x,
-      isMovingUp: position.y < prevPosition.y,
-  }
-return (
-  <div 
-    className="cursor-trail"
-    style={{
-      left: '${position.x}px',
-      top: '${position.y}px',
-      transform: 'translate(${direction.isMovingLeft ? '+50%':'-50%'}, ${direction.isMovingUp ? '+50%':'-50%'})', 
-    }}></div>
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return (
+    <>
+      {trails.map((trail) => (
+        <div
+          className="cursor-trail"
+          key={trail.key}
+          style={{ left: trail.x, top: trail.y }}
+        ></div>
+      ))}
+    </>
   );
 };
+
 export default CustomCursor;
