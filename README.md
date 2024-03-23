@@ -1,5 +1,5 @@
 ## How to run
-First, run the `npm i` in the project folder to install all the dependencies.
+First, run the `npm ci` in the project folder to install all the dependencies.
 
 Then run the development server:
 
