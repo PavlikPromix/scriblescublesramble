@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Inputbar.module.scss";
 
-function Inputbar({ length = 5, language = "ru" }) {
+function Inputbar({ length = 5, language = "ru", value, onChange }) {
 	const [inputValues, setInputValues] = useState(Array(length).fill(""));
 	const inputRefs = useRef([]);
 
@@ -10,6 +10,10 @@ function Inputbar({ length = 5, language = "ru" }) {
 		setInputValues(Array(length).fill(""));
 		inputRefs.current = inputRefs.current.slice(0, length);
 	}, [length]);
+
+	useEffect(() => {
+        onChange(inputValues.join(''));
+    }, [inputValues, onChange]);
 
 	const isValidCharacter = (char) => {
 		if (language === "ru") {
