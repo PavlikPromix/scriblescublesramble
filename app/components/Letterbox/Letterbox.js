@@ -1,7 +1,8 @@
 import styles from './Letterbox.module.scss'
-function Letterbox({}) {
+function Letterbox({value}) {
 	return (
 		<div className={styles.letterbar}>
+			{value}
         </div>
 	);
 }

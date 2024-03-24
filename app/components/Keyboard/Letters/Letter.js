@@ -1,9 +1,9 @@
 import styles from './Letter.module.scss'
-function Letter({children}) {
+function Letter({children, on_click}) {
 	return (
-		<button className={styles.letter}>
+		<div className={styles.letter} onClick={on_click}>
             {children}
-        </button>
+        </div>
 	);
 }
 export default Letter;

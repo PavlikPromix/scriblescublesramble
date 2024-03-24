@@ -1,5 +1,6 @@
 import styles from "./Keyboard.module.scss";
 import Letter from "./Letters/Letter";
+
 function Keyboard({lang}) {
 	return (
 		lang == "ru" ?
