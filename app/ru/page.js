@@ -7,7 +7,7 @@ export default function RuPreCustom() {
 		<>
 			<div className="maincontainer">
 				<Ownword lang={'ru'}/>
-				<Gamebar />
+				<Gamebar isActive={false}/>
 				<Keyboard lang={"ru"}/>
 			</div>
 		</>

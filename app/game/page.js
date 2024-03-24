@@ -7,7 +7,7 @@ export default function GamePage() {
 			<div className={styles.gamecontainer}>
 				<div className={`${styles.rusland} ${styles.subcontainer}`}>
 					<div className={styles.trans}>
-						<Buttonchik redirect={"randomru"}>
+						<Buttonchik redirect={"ru"}>
 							ПРОБРОСИТЬ СВОЁ СЛОВЦО
 						</Buttonchik>
 						<Buttonchik redirect={"slavshit"}>
@@ -17,7 +17,7 @@ export default function GamePage() {
 				</div>
 				<div className={`${styles.usland} ${styles.subcontainer}`}>
 					<div className={styles.trans}>
-						<Buttonchik redirect={"randomus"}>
+						<Buttonchik redirect={"en"}>
 							СВОЁ СЛОВО
 						</Buttonchik>
 						<Buttonchik redirect={"usshit"}>

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import styles from "./Gamebar.module.scss";
 import Letterbox from "../Letterbox/Letterbox";
 
-function Gamebar({ lang }) {
+function Gamebar({ lang, isActive = true }) {
 	const numberOfRows = 5;
 	const numberOfLetters = 5;
 	const [currentRow, setCurrentRow] = useState(0);
@@ -57,6 +57,7 @@ function Gamebar({ lang }) {
 
 	useEffect(() => {
 		const handleKeyDown = (event) => {
+			if (isActive == false) return;
 			if (event.key === "Backspace") {
 				setLetters((prevLetters) => {
 					const newLetters = [...prevLetters];
@@ -113,6 +114,7 @@ function Gamebar({ lang }) {
 		cyrillicToQwertyMapping,
 		lang,
 		qwertyToCyrillicMapping,
+		isActive,
 	]);
 
 	return (

@@ -7,7 +7,7 @@ export default function USPreCustom() {
 		<>
 			<div className="maincontainer">
 				<Ownword/>
-				<Gamebar/>
+				<Gamebar isActive={false}/>
 				<Keyboard/>
 			</div>
 		</>
