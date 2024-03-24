@@ -10,18 +10,17 @@
 }
 
 @keyframes trailAnimation {
-  0%, 16.66% {
+  0%, 20% {
     opacity: 1;
-    transform: scale(1);
     background-color: white;
   }
-  33.33%, 49.99% {
+  20%, 30% {
     background-color: blue;
   }
-  50%, 66.66% {
+  30%, 50% {
     background-color: red;
   }
-  66.67%, 100% {
+  50%, 100% {
     opacity: 0;
   }
 }

@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Inputbar.module.scss";
 
-function Inputbar({ length = 5, language = "ru", value, onChange }) {
+function Inputbar({ length = 5, lang, value, onChange }) {
 	const [inputValues, setInputValues] = useState(Array(length).fill(""));
 	const inputRefs = useRef([]);
 
@@ -16,7 +16,7 @@ function Inputbar({ length = 5, language = "ru", value, onChange }) {
     }, [inputValues, onChange]);
 
 	const isValidCharacter = (char) => {
-		if (language === "ru") {
+		if (lang === "ru") {
 			return /^[а-яА-ЯёЁ]*$/.test(char);
 		} else {
 			return /^[a-zA-Z]*$/.test(char);

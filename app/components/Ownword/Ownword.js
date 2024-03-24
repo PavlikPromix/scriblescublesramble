@@ -43,7 +43,7 @@ function Ownword({ lang }) {
 				<div className={styles.text}>
 					Выберите слово, которое хотите загадать (5 букв)
 				</div>
-				<Inputbar value={word} onChange={handleInputChange} />
+				<Inputbar value={word} onChange={handleInputChange} lang={lang} />
 				<Buttonchik onClick={async () => await createWord()}>Продолжить</Buttonchik>
 			</div>
 		</div>

@@ -1,10 +1,44 @@
-import './Gamebar.css'
-import Letterbar from '../Letterbar/Letterbar'
+import styles from "./Gamebar.module.scss";
+import Letterbox from "../Letterbox/Letterbox";
 function Gamebar({}) {
 	return (
-		<div className="gamebar">
-            <Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/><Letterbar/>
-        </div>
+		<div className={styles.gamebar}>
+			<div className={styles.gamebar_row}>
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+			</div>
+			<div className={styles.gamebar_row}>
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+			</div>
+			<div className={styles.gamebar_row}>
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+			</div>
+			<div className={styles.gamebar_row}>
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+			</div>
+			<div className={styles.gamebar_row}>
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+				<Letterbox />
+			</div>
+		</div>
 	);
 }
 export default Gamebar;
