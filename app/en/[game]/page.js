@@ -4,6 +4,7 @@ import Keyboard from "../../components/Keyboard/Keyboard";
 import { GameProvider } from "../../GameProvider";
 import { useEffect, useState } from "react";
 import { decryptString } from "../../elcrypto";
+import NotFound from "../../components/NotFound/NotFound";
 
 export default function USCustom({ params }) {
 	const [word, setWord] = useState("")
@@ -28,6 +29,7 @@ export default function USCustom({ params }) {
 			})
 	}, [params.game])
 	return (
+		error ? <NotFound /> :
 		<div className="maincontainer">
 			<GameProvider>
 				<Gamebar word={word} />

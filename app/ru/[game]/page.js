@@ -4,6 +4,7 @@ import Keyboard from "../../components/Keyboard/Keyboard";
 import { GameProvider } from "../../GameProvider";
 import { useEffect, useState } from "react";
 import { decryptString } from "../../elcrypto";
+import NotFound from "../../components/NotFound/NotFound";
 
 export default function RuCustom({ params }) {
 	const [word, setWord] = useState("")
@@ -29,6 +30,7 @@ export default function RuCustom({ params }) {
 	}, [params.game])
 
 	return (
+		error ? <NotFound /> :
 		<div className="maincontainer">
 			<GameProvider>
 				<Gamebar lang={"ru"} word={word} />
