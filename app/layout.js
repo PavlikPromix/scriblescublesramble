@@ -1,4 +1,4 @@
-import Navigationbar from "./components/Navigationbar/Navigationbar.js";
+import Navbar from "./components/Navbar/Navbar";
 import "./globals.css";
 
 export const metadata = {
@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
 				<title>{metadata.title}</title>
 			</head>
 			<body>
-				<Navigationbar />
+				<Navbar />
 				{children}
 			</body>
 		</html>

@@ -1,8 +1,8 @@
 'use client'
-import styles from "./Navigationbar.module.scss";
+import styles from "./Navbar.module.scss";
 import { useRouter } from 'next/navigation';
 
-function Navigationbar() {
+function Navbar() {
 	const router = useRouter();
 	return (
 		<div className={styles.container}>
@@ -10,4 +10,4 @@ function Navigationbar() {
 		</div>
 	);
 }
-export default Navigationbar;
+export default Navbar;
