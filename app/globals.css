@@ -28,7 +28,7 @@ html, body {
 }
 
 .shadow {
-	text-shadow: rgba(0, 0, 0, 0.432) 1px 1px 1px; 
+	text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px; 
 }
 
 p {
@@ -44,4 +44,8 @@ p {
 	justify-content: center;
 	flex-direction: column;
 	gap: 1em;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
