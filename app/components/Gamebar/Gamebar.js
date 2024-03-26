@@ -2,17 +2,12 @@
 import React, { useState, useEffect, useMemo } from "react";
 import styles from "./Gamebar.module.scss";
 import Letterbox from "../Letterbox/Letterbox";
+import { useGame } from "../../GameProvider";
 
-function Gamebar({ lang, isActive = true }) {
+function Gamebar({ lang, isActive = true, word }) {
 	const numberOfRows = 5;
 	const numberOfLetters = 5;
-	const [currentRow, setCurrentRow] = useState(0);
-	const [currentPosition, setCurrentPosition] = useState(0);
-	const [letters, setLetters] = useState(
-		Array(numberOfRows)
-			.fill(null)
-			.map(() => Array(numberOfLetters).fill(""))
-	);
+	const { letters, setLetters, currentRow, setCurrentRow, currentPosition, setCurrentPosition } = useGame();
 
 	const qwertyToCyrillicMapping = useMemo(() => {
 		return {
@@ -42,18 +37,22 @@ function Gamebar({ lang, isActive = true }) {
 			X: "Ч",
 			Y: "Н",
 			Z: "Я",
-			'[': "Х",
-			']': "Ъ",
-			';': "Ж",
+			"[": "Х",
+			"]": "Ъ",
+			";": "Ж",
 			"'": "Э",
-			',': "Б",
-			'.': "Ю",
+			",": "Б",
+			".": "Ю",
 		};
 	}, []);
 
 	const cyrillicToQwertyMapping = Object.fromEntries(
 		Object.entries(qwertyToCyrillicMapping).map(([k, v]) => [v, k])
 	);
+
+	const checkWord = (word) => {
+		return word.toUpperCase() == word;
+	};
 
 	useEffect(() => {
 		const handleKeyDown = (event) => {
@@ -70,11 +69,12 @@ function Gamebar({ lang, isActive = true }) {
 					setCurrentPosition(newPos);
 					return newLetters;
 				});
-			} else if (event.key === "Enter" && currentPosition == 5) {
+			} else if (event.key === "Enter" && currentPosition == numberOfLetters) {
 				setLetters((prevLetters) => {
 					const newLetters = [...prevLetters];
 					if (currentRow < numberOfRows - 1) {
-						newLetters[currentRow + 1] = Array(numberOfLetters).fill("");
+						newLetters[currentRow + 1] =
+							Array(numberOfLetters).fill("");
 						setCurrentRow(currentRow + 1);
 						setCurrentPosition(0);
 					}
@@ -91,7 +91,10 @@ function Gamebar({ lang, isActive = true }) {
 					key = mapping[key];
 				}
 
-				if (key.length === 1 && ((key >= "A" && key <= "Z") || (key >= "А" && key <= "Я"))) {
+				if (
+					key.length === 1 &&
+					((key >= "A" && key <= "Z") || (key >= "А" && key <= "Я"))
+				) {
 					setLetters((prevLetters) => {
 						const newLetters = [...prevLetters];
 						if (currentPosition < numberOfLetters) {
@@ -115,6 +118,9 @@ function Gamebar({ lang, isActive = true }) {
 		lang,
 		qwertyToCyrillicMapping,
 		isActive,
+		setLetters, 
+		setCurrentPosition, 
+		setCurrentRow
 	]);
 
 	return (
