@@ -7,8 +7,8 @@ export default function USPreCustom() {
 	return (
 		<>
 			<div className="maincontainer">
-				<Ownword />
-				<GameProvider>
+				<GameProvider lang="en">
+					<Ownword />
 					<Gamebar isActive={false} />
 					<Keyboard />
 				</GameProvider>

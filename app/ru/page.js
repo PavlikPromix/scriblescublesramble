@@ -7,10 +7,10 @@ export default async function RuPreCustom() {
 	return (
 		<>
 			<div className="maincontainer">
-				<Ownword lang={"ru"} />
-				<GameProvider>
-					<Gamebar lang={"ru"} isActive={false} />
-					<Keyboard lang={"ru"} />
+				<GameProvider lang="ru">
+					<Ownword />
+					<Gamebar isActive={false} />
+					<Keyboard />
 				</GameProvider>
 			</div>
 		</>

@@ -4,7 +4,7 @@ import Letter from "./Letters/Letter";
 import { useGame } from "../../GameProvider";
 import { useEffect, useState } from "react";
 
-function Keyboard({ lang = "en" }) {
+function Keyboard({  }) {
 	const {
 		letters,
 		setLetters,
@@ -15,6 +15,9 @@ function Keyboard({ lang = "en" }) {
 		guessResults,
 		setGuessResults,
 		word,
+		won,
+		setWon,
+		lang
 	} = useGame();
 	const numberOfRows = 5;
 	const numberOfLetters = 5;
@@ -62,6 +65,10 @@ function Keyboard({ lang = "en" }) {
 		}
 
 		setGuessResults(newGuessResults);
+
+		if (guess.join("") === word) {
+			setWon(true);
+		}
 	};
 
 	const inputHandler = (key) => {

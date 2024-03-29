@@ -13,8 +13,8 @@ export async function GetWord(id) {
 	}
 }
 
-export async function GetRandomWord(length) {
-	const data = await fs.readFile("app/dictionary.json", "utf8");
+export async function GetRandomWord(length, lang) {
+	const data = await fs.readFile(lang == "ru" ? "app/dictionaryru.json" : "app/dictionaryen.json", "utf8");
 	const wordsArray = JSON.parse(data);
 
 	const filteredWords = wordsArray.filter((word) => word.length === length);

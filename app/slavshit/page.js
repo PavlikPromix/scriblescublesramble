@@ -5,13 +5,13 @@ import CustomCursor from "../components/Сursour/Slavcursour/Slavcursour";
 import { GetRandomWord } from "../api/utils";
 
 export default async function RuRandom() {
-	const word = await GetRandomWord(5);
+	const word = await GetRandomWord(5, "ru");
 	return (
 		<div className="maincontainer">
 			<CustomCursor />
-			<GameProvider word={word.toUpperCase()}>
-				<Gamebar lang={"ru"} />
-				<Keyboard lang={"ru"} />
+			<GameProvider word={word.toUpperCase()} lang="ru">
+				<Gamebar />
+				<Keyboard />
 			</GameProvider>
 		</div>
 	);

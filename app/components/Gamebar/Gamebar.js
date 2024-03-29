@@ -4,7 +4,7 @@ import styles from "./Gamebar.module.scss";
 import Letterbox from "../Letterbox/Letterbox";
 import { useGame } from "../../GameProvider";
 
-function Gamebar({ lang, isActive = true }) {
+function Gamebar({ isActive = true }) {
 	const numberOfRows = 5;
 	const numberOfLetters = 5;
 	const {
@@ -16,7 +16,10 @@ function Gamebar({ lang, isActive = true }) {
 		setCurrentPosition,
 		guessResults,
 		setGuessResults,
-		word
+		word,
+		won,
+		setWon,
+		lang
 	} = useGame();
 
 	const qwertyToCyrillicMapping = useMemo(() => {
@@ -79,6 +82,10 @@ function Gamebar({ lang, isActive = true }) {
 			}
 
 			setGuessResults(newGuessResults);
+
+			if (guess.join("") === word) {
+				setWon(true);
+			}
 		};
 		const handleKeyDown = (event) => {
 			if (isActive == false) return;
@@ -154,6 +161,7 @@ function Gamebar({ lang, isActive = true }) {
 		word,
 		guessResults,
 		setGuessResults,
+		setWon,
 	]);
 
 	return (
