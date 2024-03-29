@@ -1,9 +1,9 @@
-import styles from './Letterbox.module.scss'
-function Letterbox({value}) {
+import styles from "./Letterbox.module.scss";
+function Letterbox({ value, bgColor = "var(--bg-color)" }) {
 	return (
-		<div className={styles.letterbar}>
+		<div className={styles.letterbar} style={{ backgroundColor: bgColor }}>
 			{value}
-        </div>
+		</div>
 	);
 }
 export default Letterbox;

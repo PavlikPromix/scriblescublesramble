@@ -11,7 +11,7 @@ export default function USCustom({ params }) {
 		error ? <NotFound /> :
 		<div className="maincontainer">
 			<GameProvider>
-				<Gamebar word={word} />
+				<Gamebar word={word.toUpperCase()} />
 				<Keyboard />
 			</GameProvider>
 		</div>

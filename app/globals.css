@@ -9,6 +9,9 @@
     --primary: #29411B;
     --primarylight: #3F642A;
     --accent: #74e85e;
+    --correct: #00AB66;
+    --exists: #f4cd2a;
+    --incorrect: #999999;
 }
 
 html, body {

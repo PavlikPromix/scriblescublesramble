@@ -11,8 +11,8 @@ export default async function RuCustom({ params }) {
 		<NotFound />
 	) : (
 		<div className="maincontainer">
-			<GameProvider>
-				<Gamebar lang={"ru"} word={word} />
+			<GameProvider word={word.toUpperCase()}>
+				<Gamebar lang={"ru"} />
 				<Keyboard lang={"ru"} />
 			</GameProvider>
 		</div>
