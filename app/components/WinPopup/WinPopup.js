@@ -1,4 +1,4 @@
-import styles from "./FinalPopup.module.scss";
+import styles from "./WinPopup.module.scss";
 import Buttonchik from "../Buttonchik/Buttonchik";
 
 export default function FinalPopup({ word, lang }) {
