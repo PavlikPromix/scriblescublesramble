@@ -4,6 +4,12 @@ import Letter from "./Letters/Letter";
 import { useGame } from "../../GameProvider";
 import { useEffect, useState } from "react";
 
+async function CheckWord(word, lang) {
+	const res = await fetch(`/api/checkword/${lang}-${lang}/${word}`);
+	const data = await res.json();
+	return data;
+}
+
 function Keyboard({  }) {
 	const {
 		letters,
@@ -17,10 +23,11 @@ function Keyboard({  }) {
 		word,
 		won,
 		setWon,
-		lang
+		lang,
+		numberOfRows, 
+		numberOfLetters,
+		setNotExists,
 	} = useGame();
-	const numberOfRows = 5;
-	const numberOfLetters = 5;
 	const [letterStatuses, setLetterStatuses] = useState({});
 
 	useEffect(() => {
@@ -47,9 +54,19 @@ function Keyboard({  }) {
 		setLetterStatuses(aggregateGuessResults());
 	}, [guessResults, letters]);
 
-	const validateGuess = () => {
+	const validateGuess = async () => {
 		const guess = letters[currentRow];
 		const newGuessResults = [...guessResults];
+
+		const isRealWord = await CheckWord(guess.join(""), lang).then(
+			(data) => {
+				return data;
+			}
+		);
+		if (!isRealWord) {
+			setNotExists(true);
+			return false;
+		}
 
 		newGuessResults[currentRow] =
 			Array(numberOfLetters).fill("var(--bg-color)");
@@ -69,9 +86,11 @@ function Keyboard({  }) {
 		if (guess.join("") === word) {
 			setWon(true);
 		}
+
+		return true;
 	};
 
-	const inputHandler = (key) => {
+	const inputHandler = async (key) => {
 		if (key == "←") {
 			setLetters((prevLetters) => {
 				const newLetters = [...prevLetters];
@@ -86,6 +105,8 @@ function Keyboard({  }) {
 			});
 		} else if (key === "⏎") {
 			if (currentPosition == numberOfLetters) {
+				const valid = await validateGuess();
+				if (!valid) return;
 				setLetters((prevLetters) => {
 					const newLetters = [...prevLetters];
 					if (currentRow < numberOfRows - 1) {
@@ -96,7 +117,6 @@ function Keyboard({  }) {
 					}
 					return newLetters;
 				});
-				validateGuess();
 			}
 		} else {
 			setLetters((prevLetters) => {

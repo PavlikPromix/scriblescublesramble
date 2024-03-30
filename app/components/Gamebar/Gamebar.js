@@ -4,9 +4,13 @@ import styles from "./Gamebar.module.scss";
 import Letterbox from "../Letterbox/Letterbox";
 import { useGame } from "../../GameProvider";
 
+async function CheckWord(word, lang) {
+	const res = await fetch(`/api/checkword/${lang}-${lang}/${word}`);
+	const data = await res.json();
+	return data;
+}
+
 function Gamebar({ isActive = true }) {
-	const numberOfRows = 5;
-	const numberOfLetters = 5;
 	const {
 		letters,
 		setLetters,
@@ -19,7 +23,10 @@ function Gamebar({ isActive = true }) {
 		word,
 		won,
 		setWon,
-		lang
+		lang,
+		numberOfRows,
+		numberOfLetters,
+		setNotExists,
 	} = useGame();
 
 	const qwertyToCyrillicMapping = useMemo(() => {
@@ -64,9 +71,19 @@ function Gamebar({ isActive = true }) {
 	);
 
 	useEffect(() => {
-		const validateGuess = () => {
+		const validateGuess = async () => {
 			const guess = letters[currentRow];
 			const newGuessResults = [...guessResults];
+
+			const isRealWord = await CheckWord(guess.join(""), lang).then(
+				(data) => {
+					return data;
+				}
+			);
+			if (!isRealWord) {
+				setNotExists(true);
+				return false;
+			}
 
 			newGuessResults[currentRow] =
 				Array(numberOfLetters).fill("var(--bg-color)");
@@ -86,8 +103,10 @@ function Gamebar({ isActive = true }) {
 			if (guess.join("") === word) {
 				setWon(true);
 			}
+
+			return true;
 		};
-		const handleKeyDown = (event) => {
+		const handleKeyDown = async (event) => {
 			if (isActive == false) return;
 			if (event.key === "Backspace") {
 				setLetters((prevLetters) => {
@@ -105,6 +124,8 @@ function Gamebar({ isActive = true }) {
 				event.key === "Enter" &&
 				currentPosition == numberOfLetters
 			) {
+				const valid = await validateGuess();
+				if (!valid) return;
 				setLetters((prevLetters) => {
 					const newLetters = [...prevLetters];
 					if (currentRow < numberOfRows - 1) {
@@ -115,7 +136,6 @@ function Gamebar({ isActive = true }) {
 					}
 					return newLetters;
 				});
-				validateGuess();
 			} else {
 				let key = event.key.toUpperCase();
 
@@ -162,6 +182,9 @@ function Gamebar({ isActive = true }) {
 		guessResults,
 		setGuessResults,
 		setWon,
+		numberOfLetters,
+		numberOfRows,
+		setNotExists,
 	]);
 
 	return (

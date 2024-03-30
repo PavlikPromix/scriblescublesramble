@@ -1,9 +1,9 @@
 
 
 export async function GET(request, context) {
-    const word = context.params.word;
+    const word = context.params.word.toLowerCase();
     const lang = context.params.lang;
-    console.log(lang);
+    console.log(`Checked "${word}"`);
     
     if (lang != 'ru-ru' && lang != 'en-en') 
         return new Response('Incorrect language');
