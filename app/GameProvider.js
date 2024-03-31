@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, useState } from "react";
-import WinPopup from "./components/WinPopup/WinPopup";
+import WinPopup from "./components/WinWindow/WinWindow";
 import Popup from "./components/Popup/Popup";
 
 const GameContext = createContext();
