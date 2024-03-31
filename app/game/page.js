@@ -7,20 +7,40 @@ export default function GamePage() {
 			<div className={styles.gamecontainer}>
 				<div className={`${styles.rusland} ${styles.subcontainer}`}>
 					<div className={styles.trans}>
-						<Buttonchik width="70%" height="10%" fontSize="1.3em" redirect={"ru"}>
+						<Buttonchik
+							width="70%"
+							height="10%"
+							fontSize="1.3em"
+							redirect={"ru"}
+						>
 							СВОЯ РЕЧЪ
 						</Buttonchik>
-						<Buttonchik width="70%" height="10%" fontSize="1.3em" redirect={"slavshit"}>
+						<Buttonchik
+							width="70%"
+							height="10%"
+							fontSize="1.3em"
+							redirect={"slavshit"}
+						>
 							НЕЧАЯННОЕ СЛОВЪЦО
 						</Buttonchik>
 					</div>
 				</div>
 				<div className={`${styles.usland} ${styles.subcontainer}`}>
 					<div className={styles.trans}>
-						<Buttonchik width="70%" height="10%" fontSize="1.3em" redirect={"en"}>
+						<Buttonchik
+							width="70%"
+							height="10%"
+							fontSize="1.3em"
+							redirect={"en"}
+						>
 							СВОЙ УОРД
 						</Buttonchik>
-						<Buttonchik width="70%" height="10%" fontSize="1.3em" redirect={"usshit"}>
+						<Buttonchik
+							width="70%"
+							height="10%"
+							fontSize="1.3em"
+							redirect={"usshit"}
+						>
 							БОЙНЯ НА УАЙЛД ЗАПАДЕ
 						</Buttonchik>
 					</div>
