@@ -3,17 +3,40 @@ import Keyboard from "../../components/Keyboard/Keyboard";
 import { GameProvider } from "../../GameProvider";
 import NotFound from "../../components/NotFound/NotFound";
 import { GetWord } from "../../api/utils";
-
-export default function USCustom({ params }) {
+import UsCursor from '../../components/Сursour/Slavcursour/Uscursour/UsCursor'
+import Image from 'next/image'
+import styles from './page.module.scss'
+import TitleUs from '../../components/TitleUs/TitleUs'
+export default async function USCustom({ params }) {
 	const id = params.game;
-	const { word, error } = GetWord(id);
-	return (
-		error ? <NotFound /> :
+	const { word, error } = await GetWord(id);
+	return error ? (
+		<NotFound />
+	) : (
 		<div className="maincontainer">
-			<GameProvider lang="en" word={word.toUpperCase()}>
+			<UsCursor/>
+			<GameProvider word={word.toUpperCase()} lang="en">
+				<TitleUs/>
 				<Gamebar />
 				<Keyboard />
 			</GameProvider>
+			<Image
+					className={styles.imgrev1}
+					src="/revolver.svg"
+					alt=""
+					width={700}
+					height={700}
+					
+				/>
+			<Image
+					className={styles.imgrev2}
+					src="/revolver.svg"
+					alt=""
+					width={700}
+					height={700}
+					
+				/>
 		</div>
+
 	);
 }
