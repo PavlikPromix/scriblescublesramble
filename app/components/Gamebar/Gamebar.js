@@ -75,6 +75,11 @@ function Gamebar({ isActive = true }) {
 			const guess = letters[currentRow];
 			const newGuessResults = [...guessResults];
 
+			if (guess.join("") === word) {
+				setWon(true);
+				return false;
+			}
+
 			const isRealWord = await CheckWord(guess.join(""), lang).then(
 				(data) => {
 					return data;
@@ -99,10 +104,6 @@ function Gamebar({ isActive = true }) {
 			}
 
 			setGuessResults(newGuessResults);
-
-			if (guess.join("") === word) {
-				setWon(true);
-			}
 
 			return true;
 		};
