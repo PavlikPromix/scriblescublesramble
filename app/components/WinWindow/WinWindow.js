@@ -11,10 +11,10 @@ export default function WinWindow({ word, lang }) {
 					<p className={styles.word}>{word}</p>
 				</div>
 				<div className={styles.buttons}>
-					<Buttonchik width="50%" redirect={"/ru"}>
+					<Buttonchik width="50%" redirect={lang == 'ru' ? "/ru" : '/en'}>
 						{lang == "ru" ? "НОВО СЛОВО" : "НЬЮ ДЖЕРСИ"}
 					</Buttonchik>
-					<Buttonchik width="50%" redirect={"/"}>
+					<Buttonchik width="50%" redirect={"/game"}>
 						{lang == "ru" ? "В ЧЕРТОГ" : "ТУ ЮЭСЭЙ"}
 					</Buttonchik>
 				</div>
