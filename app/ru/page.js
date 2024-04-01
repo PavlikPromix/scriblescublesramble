@@ -33,6 +33,20 @@ export default async function RuPreCustom() {
 					height={600}
 					
 				/>
+				<Image
+					className={styles.img1}
+					width={80}
+					height={100}
+					src="/rusi.svg"
+					alt=""
+				/>
+				<Image
+					className={styles.img2}
+					width={80}
+					height={100}
+					src="/rusi.svg"
+					alt=""
+				/> 
 			</div>
 		</>
 	);

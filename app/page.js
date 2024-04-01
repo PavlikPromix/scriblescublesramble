@@ -17,7 +17,7 @@ export default function Home() {
 				<Buttonchik redirect={"game"}>ИГРАТЬ</Buttonchik>
 			</div>
 			<div>
-				 <Image
+				<Image
 					className={styles.img1}
 					width={80}
 					height={100}
