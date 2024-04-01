@@ -1,0 +1,16 @@
+.imgtop1 {
+	position: fixed;
+    gap:0.5em;
+    right: 0;
+	top:100px;
+    transform: scaleX(-1);
+    //transform: rotate(40deg)
+    //height: calc(100svh - 80px);
+
+}
+.imgtop2 {
+	position: fixed;
+    gap:0.5em;
+	left:0;
+	top:100px;
+}
