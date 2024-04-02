@@ -1,12 +1,12 @@
-import styles from "./WinWindow.module.scss";
+import styles from "./LoseWindow.module.scss";
 import Buttonchik from "../Buttonchik/Buttonchik";
 
-export default function WinWindow({ word, lang, gameMode }) {
+export default function LoseWindow({ word, lang, gameMode }) {
 	return (
 		<div className={styles.container}>
 			<div className={styles.panel}>
 				<h1 className={styles.title}>
-					{lang == "ru" ? "ВЫ СЛАВУ ОБРЕЛИ!" : "Ю ГАТ ЗЭ ВИН!"}
+					{lang == "ru" ? "ВЫ ПОЗОР ОБРЕЛИ" : "Ю ГАТ ЗЭ ЛУЗ"}
 				</h1>
 				<div className={styles.info}>
 					<p className={styles.text}>
@@ -23,8 +23,8 @@ export default function WinWindow({ word, lang, gameMode }) {
 									? "/ru"
 									: "/en"
 								: lang == "ru"
-									? "/slavshit"
-									: "/usshit"
+                                    ? "/slavshit"
+                                    : "/usshit"
 						}
 					>
 						{lang == "ru" ? "НОВО СЛОВО" : "НЬЮ ДЖЕРСИ"}

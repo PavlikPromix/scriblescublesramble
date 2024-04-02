@@ -10,7 +10,7 @@ export default async function USRandom() {
 	const word = await GetRandomWord(5, "en");
 	return (
 		<div className="maincontainer">
-			<GameProvider lang="en" word={word.toUpperCase()}>
+			<GameProvider lang="en" word={word.toUpperCase()} gameMode="random">
 				<UsCursor/>
 				<TitleUs/>
 				<Gamebar />

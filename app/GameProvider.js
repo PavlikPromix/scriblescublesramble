@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useContext, useState } from "react";
-import WinPopup from "./components/WinWindow/WinWindow";
+import WinWindow from "./components/WinWindow/WinWindow";
+import LoseWindow from "./components/LoseWindow/LoseWindow";
 import Popup from "./components/Popup/Popup";
 
 const GameContext = createContext();
@@ -9,7 +10,7 @@ export function useGame() {
 	return useContext(GameContext);
 }
 
-export function GameProvider({ children, word, lang = "en" }) {
+export function GameProvider({ children, word, lang = "en", gameMode = "custom" }) {
 	const [letters, setLetters] = useState(
 		Array(5)
 			.fill(null)
@@ -29,6 +30,7 @@ export function GameProvider({ children, word, lang = "en" }) {
 	);
 
 	const [won, setWon] = useState(false);
+	const [lost, setLost] = useState(false);
 	const [notExists, setNotExists] = useState(false);
 	return (
 		<GameContext.Provider
@@ -45,16 +47,27 @@ export function GameProvider({ children, word, lang = "en" }) {
 				won,
 				setWon,
 				lang,
-				numberOfRows, 
+				numberOfRows,
 				setNumberOfRows,
 				numberOfLetters,
 				setNumberOfLetters,
-				setNotExists
+				setNotExists,
+				lost,
+				setLost,
 			}}
 		>
 			{children}
-			{won && <WinPopup word={word} lang={lang} />}
-			{notExists && <Popup onRemove={() => setNotExists(false)} vertical="top" horizontal="right">Слово не существует!</Popup>}
+			{won && <WinWindow word={word} lang={lang} gameMode={gameMode} />}
+			{lost && <LoseWindow word={word} lang={lang} gameMode={gameMode}/>}
+			{notExists && (
+				<Popup
+					onRemove={() => setNotExists(false)}
+					vertical="top"
+					horizontal="right"
+				>
+					Слово не существует!
+				</Popup>
+			)}
 		</GameContext.Provider>
 	);
 }

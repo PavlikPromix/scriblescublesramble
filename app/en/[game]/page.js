@@ -15,7 +15,7 @@ export default async function USCustom({ params }) {
 	) : (
 		<div className="maincontainer">
 			<UsCursor/>
-			<GameProvider word={word.toUpperCase()} lang="en">
+			<GameProvider word={word.toUpperCase()} lang="en" gameMode="custom">
 				<TitleUs/>
 				<Gamebar />
 				<Keyboard />

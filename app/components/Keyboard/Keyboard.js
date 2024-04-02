@@ -27,6 +27,7 @@ function Keyboard({  }) {
 		numberOfRows, 
 		numberOfLetters,
 		setNotExists,
+		setLost
 	} = useGame();
 	const [letterStatuses, setLetterStatuses] = useState({});
 
@@ -60,6 +61,11 @@ function Keyboard({  }) {
 
 		if (guess.join("") === word) {
 			setWon(true);
+			return false;
+		}
+
+		if (currentRow === numberOfRows - 1) {
+			setLost(true);
 			return false;
 		}
 

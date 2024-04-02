@@ -11,7 +11,7 @@ export default async function RuRandom() {
 	return (
 		<div className="maincontainer">
 			<CustomCursor />
-			<GameProvider word={word.toUpperCase()} lang="ru">
+			<GameProvider word={word.toUpperCase()} lang="ru" gameMode="random">
 				<TitleRu/>
 				<Gamebar />
 				<Keyboard />

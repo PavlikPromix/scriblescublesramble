@@ -27,6 +27,7 @@ function Gamebar({ isActive = true }) {
 		numberOfRows,
 		numberOfLetters,
 		setNotExists,
+		setLost
 	} = useGame();
 
 	const qwertyToCyrillicMapping = useMemo(() => {
@@ -77,6 +78,11 @@ function Gamebar({ isActive = true }) {
 
 			if (guess.join("") === word) {
 				setWon(true);
+				return false;
+			}
+			console.log(currentRow, numberOfRows - 1);
+			if (currentRow === numberOfRows - 1) {
+				setLost(true);
 				return false;
 			}
 
@@ -186,6 +192,7 @@ function Gamebar({ isActive = true }) {
 		numberOfLetters,
 		numberOfRows,
 		setNotExists,
+		setLost
 	]);
 
 	return (
