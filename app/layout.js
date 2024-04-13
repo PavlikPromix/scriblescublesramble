@@ -11,6 +11,7 @@ export default function RootLayout({ children }) {
 		<html lang="ru">
 			<head>
 				<title>{metadata.title}</title>
+				<link rel="icon" href="/public/favicon.ico" sizes="any" />
 			</head>
 			<body>
 				<Navbar />
